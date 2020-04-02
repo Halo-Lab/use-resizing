@@ -1,0 +1,28 @@
+{
+  "name": "useResize",
+  "version": "1.0.0",
+  "description": "React (State and Effect) Hook to get your window size.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --mode development --watch",
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stoyanovk/useResize"
+  }
+}
