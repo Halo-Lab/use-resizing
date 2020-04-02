@@ -1,5 +1,5 @@
-<h1>useResize</h1>
-React (State and Effect) Hook to get your window size.
+<h1>useResizing</h1>
+React Hook that triggers on window resize
 <br/>
 <br/>
 <b>Example</b>

@@ -1,7 +1,7 @@
 {
   "name": "use-resizing",
   "version": "1.0.0",
-  "description": "React Hook to get your window size",
+  "description": "React Hook that triggers on window resize",
   "main": "index.js",
   "scripts": {
     "start": "webpack --mode development --watch",
