@@ -1,5 +1,5 @@
 {
-  "name": "useResizing",
+  "name": "use-resizing",
   "version": "1.0.0",
   "description": "React Hook to get your window size",
   "main": "index.js",
