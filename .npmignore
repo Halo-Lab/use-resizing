@@ -1,0 +1,9 @@
+.idea
+.vscode
+build
+node_modules
+src
+.prettierrc
+.npmignore
+yarn.lock
+package-lock.json
