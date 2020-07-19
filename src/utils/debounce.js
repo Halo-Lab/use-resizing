@@ -1,20 +1,15 @@
-export default function debounce(fn, timeout) {
-  let timeoutId = null;
+const debounce = (func, delay) => {
+  let timeoutId;
 
-  return function(...args) {
+  return function (...args) {
     if (timeoutId) {
       clearTimeout(timeoutId);
-
-      timeoutId = setTimeout(() => {
-        fn.apply(this, args);
-        timeoutId = null;
-      }, timeout);
-    } else {
-      fn.apply(this, args);
-
-      timeoutId = setTimeout(() => {
-        timeoutId = null;
-      }, timeout);
     }
+
+    timeoutId = setTimeout(() => {
+      func(...args);
+    }, delay);
   };
-}
+};
+
+export default debounce;

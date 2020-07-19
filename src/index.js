@@ -3,22 +3,23 @@ import { useEffect, useState } from 'react';
 import getScreenSize from './src/utils/getScreenSize';
 import debounce from './src/utils/debounce';
 
-export default function currentScreenSize(settings = { debounceTime: 200 }) {
-    const [width, setWidth] = useState(getScreenSize());
+const currentScreenSize = (settings = { debounceTime: 200 }) => {
+  const [screenSize, setScreenSize] = useState(getScreenSize());
+  const handleResize = () => setScreenSize(getScreenSize());
+  const handleResizeDebounced = debounce(handleResize, settings.debounceTime);
 
-    const resizeListener = () => {
-        setWidth(getScreenSize());
-    }
+  useEffect(() => {
+    window.addEventListener('resize', handleResizeDebounced);
 
-    console.log('render')
+    return () => {
+      window.removeEventListener('resize', handleResizeDebounced);
+    };
+  }, []);
 
-    const handler = debounce(resizeListener, settings.debounceTime);
+  return {
+    width: screenSize.width,
+    height: screenSize.height,
+  };
+};
 
-    useEffect(()=>{
-        window.addEventListener('resize', handler)
-
-        return () => window.removeEventListener('resize', handler);
-    }, [])
-
-    return width;
-}
+export default currentScreenSize;
