@@ -1,4 +1,4 @@
-function debounce(fn, timeout) {
+export default function debounce(fn, timeout) {
   let timeoutId = null;
 
   return function(...args) {
