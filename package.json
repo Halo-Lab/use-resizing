@@ -6,15 +6,15 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src/index.js --out-file index.js",
-    "dev": "nodemon --watch src --exec npm run build",
     "bump": "npm version patch",
+    "dev": "nodemon --watch src --exec npm run build",
     "deploy": "npm run bump && npm publish"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
   "peerDependencies": {
-    "react": "^16.6.1"
+    "react": "^16.6.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
