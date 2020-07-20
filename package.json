@@ -1,7 +1,7 @@
 {
-  "name": "use-resize-test",
-  "version": "1.0.40",
-  "description": "",
+  "name": "my-new-module",
+  "version": "1.0.0",
+  "description": "NPM module template description",
   "private": false,
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "bump": "npm version patch",
     "deploy": "npm run bump && npm publish"
   },
-  "author": "",
+  "author": "Halo Lab",
   "license": "ISC",
   "peerDependencies": {
     "react": "^16.6.1",
