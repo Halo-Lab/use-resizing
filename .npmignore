@@ -3,7 +3,9 @@
 build
 node_modules
 src
+.eslintrc
 .prettierrc
 .npmignore
+babel.config.json
 yarn.lock
 package-lock.json

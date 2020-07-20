@@ -1,13 +1,13 @@
 {
   "name": "use-resize-test",
-  "version": "1.0.39",
+  "version": "1.0.40",
   "description": "",
   "private": false,
   "main": "index.js",
   "scripts": {
-    "build": "babel src/index.js --out-file index.js",
+    "build": "babel src/index.js -o index.js",
+    "develop": "babel -w src/index.js -o index.js",
     "bump": "npm version patch",
-    "dev": "nodemon --watch src --exec npm run build",
     "deploy": "npm run bump && npm publish"
   },
   "author": "",

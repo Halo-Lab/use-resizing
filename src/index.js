@@ -11,8 +11,6 @@ const currentScreenSize = (settings = { debounceTime: 200 }) => {
   useEffect(() => {
     window.addEventListener('resize', handleResizeDebounced);
 
-    console.log('hello');
-
     return () => {
       window.removeEventListener('resize', handleResizeDebounced);
     };
