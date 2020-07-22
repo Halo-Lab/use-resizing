@@ -42,7 +42,7 @@ NPM module will be connected to the React Host Project using `npm link`. Project
     ```
 
     *<sub>package.json</sub>*
-    ```
+    ```json
       "name": "my-new-module",
       "description": "NPM module template description",
       "author": "John Smith",
@@ -71,7 +71,7 @@ NPM module will be connected to the React Host Project using `npm link`. Project
     npx create-react-app host_react_app
     ```
     *<sub>App.js</sub>*
-    ```
+    ```jsx
     import React from 'react';
     import useResizing from 'my-new-module';
 
