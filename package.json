@@ -2,13 +2,17 @@
   "name": "my-new-module",
   "version": "1.0.0",
   "description": "NPM module template description",
+  "keywords": [
+    "react",
+    "hooks",
+    "screen size"
+  ],
   "private": false,
   "main": "index.js",
   "scripts": {
     "build": "babel src/index.js -o index.js",
     "develop": "babel -w src/index.js -o index.js",
-    "bump": "npm version patch",
-    "deploy": "npm run bump && npm publish"
+    "deploy": "npm publish"
   },
   "author": "Halo Lab",
   "license": "ISC",

@@ -2,112 +2,121 @@
 
 Boilerplate to create an npm module development environment with example code (custom hook that track window dimensions).
 
-> Our setup will consist of:
-> 1. NPM module project
-> 2. React host project (to debug new features)
+> Our setup will consist of two separate projects:
+> 1. NPM Module Project
+> 2. React Host Project (to debug new features)
 
-NPM module will be connected to React host project using ```npm link```.
+![projects structure](https://i.ibb.co/k2JsMyj/projects.png)
+
+NPM module will be connected to the React Host Project using `npm link`. Project separation will enable us to keep our module logic encapsulated and more maintainable.
 <br />
 <br />
 ## Available script commands
 
-<sub>1. Build module project to ***index.js***</sub>
-```
-npm run build
-```
-<sub>2. Run development script with rebuilning on any change in ***/src*** folder</sub>
-```
-npm run develop
-```
-<sub>3. Bump npm version</sub>
-```
-npm run bump
-```
-<sub>4. Bump npm version and publish package to NPM</sub>
-```
-npm run deploy
-```
+* Build module project to `index.js`.
+    ```
+    npm run build
+    ```
+* Run development will compile a file every time that any changes  in `/src` folder will occur. 
+    ```
+    npm run develop
+    ```
+* Deploy your project to NPM. The script will trigger `npm publish`.
+    ```
+    npm run deploy
+    ```
 <br />
 <br />
 
-## Setup walk through
+## 🚀 Quick start
 
-1. Clone template project
-```
-git clone https://github.com/Halo-Lab/module_template
-```
-2. Pick a module name and change folder name in package.json accordingly. Make sure you are using a unique one so you can publish your package to npm. 
+1. Clone template project.
+    ```
+    git clone https://github.com/Halo-Lab/module_template
+    ```
+2. Pick a module name and change folder name in package.json accordingly. Make sure you are using a unique one so you can publish your package to npm. Provide additional information about your module by changing *description*, *author*, *license* and *keywords*. Describe basic functionality of your module in README.md file.
 
-<sub>package.json</sub>
-```
-  "name": "my-new-module",
-```
-<sub>project folder</sub>
-```
-/my-new-module
-```
+    *<sub>project folder</sub>*
+    ```
+    /my-new-module
+    ```
+
+    *<sub>package.json</sub>*
+    ```
+      "name": "my-new-module",
+      "description": "NPM module template description",
+      "author": "John Smith",
+      "license": "ISC",
+      "keywords": ["react", "hooks", "screen size"]
+    ```
+    
 3. Install dependencies
 
-```
-npm i
-```
+    ```
+    npm i
+    ```
 
-4. Initial build command
-```
-npm run build
-```
-5. Our module is ready for development. Now we are ready to connect our module to React host project. Create a new React project and change App.js file with example code.
+4. An initial build command will compile all files from `/src` folder to a single `index.js` file. 
+    ```
+    npm run build
+    ```
+5. Our module is ready for development. Now we are ready to connect our module to React Host Project. Create a new React Project in the different folder and change App.js file with example code. **Main concept is to keep two projects in separate folders. So after the development process Module Project will include
+ module logic exclusively.**
 
-```
-npx create-react-app host_react_app
-```
-<sub>App.js</sub>
-```
-import React from 'react';
-import useResizing from 'my-new-module';
+    > Be sure that you're **not** creating new project inside Module folder.
 
-function App() {
-  const screenSize = useResizing();
+    *<sub>Navigate to your main Project Folder and create a new React Project.</sub>*
+    ```
+    cd ..
+    npx create-react-app host_react_app
+    ```
+    *<sub>App.js</sub>*
+    ```
+    import React from 'react';
+    import useResizing from 'my-new-module';
 
-  return (
-    <div className="App">
-      {`${screenSize.width}px ${screenSize.height}px`}
-    </div>
-  );
-}
+    function App() {
+      const screenSize = useResizing();
 
-export default App;
-```
-6. To connect our module open project folder and create symlink. 
+      return (
+        <div className="App">
+          {`${screenSize.width}px ${screenSize.height}px`}
+        </div>
+      );
+    }
 
-```
-cd my-new-module
-npm link
-```
-7. Now open React host project and add your locally developed module. That will create symbolic link from globally-installed ```my-new-module``` to current ***node_modules/*** folder
+    export default App;
+    ```
+6. To connect our module open Module Project folder and create a symlink. Npm link will add our package to the global `/lib/node_modules/my-new-module` folder and create a link from it. You can find more information about npm link functionality from the [official documentation](https://docs.npmjs.com/cli/link).
 
-```
-cd host_react_app
-npm link my-new-module
-```
+    ```
+    cd my-new-module
+    npm link
+    ```
+  7. Now open React Host Project and add your locally developed module. That will create a  symbolic link from globally-installed ```my-new-module``` to current `node_modules/` folder
 
-8. Start React host and Module projects. Any changes inside module's ***/src*** folder will trigger both projects to rebuild.
+      ```
+      cd host_react_app
+      npm link my-new-module
+      ```
 
-<sub>React host project</sub>
-```
-cd host_react_app
-npm run start
-```
-<sub>Module project</sub>
-```
-cd my-new-module
-npm run develop
-```
+8. Start React host and Module projects. Any changes inside module's `/src` folder will trigger both projects to rebuild.
+
+      *<sub>React host project</sub>*
+      ```
+      cd host_react_app
+      npm run start
+      ```
+      *<sub>Module project</sub>*
+      ```
+      cd my-new-module
+      npm run develop
+      ```
 
 9. Change remote's Git URL to your own repository.
 
-```
-git remote set-url origin https://github.com/USERNAME/my-new-module.git
-```
+      ```
+      git remote set-url origin https://github.com/USERNAME/my-new-module.git
+      ```
 
-10. Develop your custom module logic inside ***/src*** folder.
+10. Develop your custom module logic inside `/src` folder.
