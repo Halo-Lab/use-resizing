@@ -15,18 +15,18 @@ NPM module will be connected to the React Host Project using `npm link`. Project
 <br />
 ## Available script commands
 
-* Build module project to `src/index.js` -> `index.js`.
-    ```
-    npm run build
-    ```
-* Run development will compile a file every time that any changes  in `/src` folder will occur. 
-    ```
-    npm run develop
-    ```
-* Deploy your project to NPM. The script will trigger `npm publish`.
-    ```
-    npm run deploy
-    ```
+Build module project to `src/index.js` -> `index.js`.
+```
+npm run build
+```
+Run development will compile a file every time that any changes  in `/src` folder will occur. 
+```
+npm run develop
+```
+Deploy your project to NPM. The script will trigger `npm publish`.
+```
+npm run deploy
+```
 <br />
 <br />
 
