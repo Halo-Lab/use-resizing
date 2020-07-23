@@ -1,4 +1,6 @@
 # NPM module template
+<sub>Typescript implementation is available in a following [repo]https://github.com/Halo-Lab/react-hook-module-template-typescript)</sub>
+
 
 Boilerplate to create an npm module development environment with example code (custom hook that track window dimensions).
 
@@ -13,7 +15,7 @@ NPM module will be connected to the React Host Project using `npm link`. Project
 <br />
 ## Available script commands
 
-* Build module project to `index.js`.
+* Build module project to `src/index.js` -> `index.js`.
     ```
     npm run build
     ```
@@ -32,9 +34,9 @@ NPM module will be connected to the React Host Project using `npm link`. Project
 
 1. Clone template project.
     ```
-    git clone https://github.com/Halo-Lab/module_template
+    git clone https://github.com/Halo-Lab/react-hook-module-template
     ```
-2. Pick a module name and change folder name in package.json accordingly. Make sure you are using a unique one so you can publish your package to npm. Provide additional information about your module by changing *description*, *author*, *license* and *keywords*. Describe basic functionality of your module in README.md file.
+2. Pick a module name and change folder name in `package.json` accordingly. Make sure you are using a unique one so you can publish your package to npm. Provide additional information about your module by changing *description*, *author*, *license* and *keywords*. Describe basic functionality of your module in `README.md` file.
 
     *<sub>project folder</sub>*
     ```
@@ -60,7 +62,7 @@ NPM module will be connected to the React Host Project using `npm link`. Project
     ```
     npm run build
     ```
-5. Our module is ready for development. Now we are ready to connect our module to React Host Project. Create a new React Project in the different folder and change App.js file with example code. **Main concept is to keep two projects in separate folders. So after the development process Module Project will include
+5. Our module is ready for development. Now we are ready to connect our module to React Host Project. Create a new React Project in the different folder and change `App.js` file with example code. **Main concept is to keep two projects in separate folders. So after the development process Module Project will include
  module logic exclusively.**
 
     > Be sure that you're **not** creating new project inside Module folder.
@@ -87,7 +89,7 @@ NPM module will be connected to the React Host Project using `npm link`. Project
 
     export default App;
     ```
-6. To connect our module open Module Project folder and create a symlink. Npm link will add our package to the global `/lib/node_modules/my-new-module` folder and create a link from it. You can find more information about npm link functionality from the [official documentation](https://docs.npmjs.com/cli/link).
+6. To connect our module open Module Project folder and create a symlink. Npm link will add our package to the global `/lib/node_modules/my-new-module` folder and create a link from it. You can find more information about npm link functionality in the [official documentation](https://docs.npmjs.com/cli/link).
 
     ```
     cd my-new-module
