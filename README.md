@@ -1,5 +1,5 @@
 # NPM module template
-<sub>Typescript implementation is available in a following [repo]https://github.com/Halo-Lab/react-hook-module-template-typescript)</sub>
+<sub>Typescript implementation is available in a following [repo](https://github.com/Halo-Lab/react-hook-module-template-typescript) </sub>
 
 
 Boilerplate to create an npm module development environment with example code (custom hook that track window dimensions).
