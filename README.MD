@@ -1,4 +1,8 @@
 <h1>useResizing</h1>
+
+<img src="http://api.halo-lab.com/wp-content/uploads/useResizing.gif" alt="useResizing demo" height="593" width="600">
+
+
 React Hook that triggers on window resize
 <br/>
 <br/>
