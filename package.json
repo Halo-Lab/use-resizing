@@ -1,7 +1,7 @@
 {
-  "name": "my-new-module",
-  "version": "1.0.0",
-  "description": "NPM module template description",
+  "name": "use-resizing",
+  "version": "2.0.0",
+  "description": "React Hook that triggers on window resize",
   "keywords": [
     "react",
     "hooks",
