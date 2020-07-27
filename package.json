@@ -8,10 +8,10 @@
     "screen size"
   ],
   "private": false,
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "build": "babel src/index.js -o index.js",
-    "develop": "babel -w src/index.js -o index.js",
+    "build": "babel src --out-dir lib",
+    "develop": "babel -w src --out-dir lib",
     "deploy": "npm publish"
   },
   "author": "Halo Lab",

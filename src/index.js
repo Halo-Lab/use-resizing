@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import getScreenSize from './src/utils/getScreenSize';
-import debounce from './src/utils/debounce';
+import getScreenSize from './utils/getScreenSize';
+import debounce from './utils/debounce';
 
 const currentScreenSize = (settings = { debounceTime: 200 }) => {
   const [screenSize, setScreenSize] = useState(getScreenSize());
