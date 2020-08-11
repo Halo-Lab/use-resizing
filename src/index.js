@@ -18,7 +18,10 @@ const getScreenSize = () => {
 };
 
 export default function useResizeWidth() {
-  const [screenSize, setScreenSize] = useState(null);
+  const [screenSize, setScreenSize] = useState({
+    width: 0,
+    height: 0,
+  });
   const handleSetWidth = () => setScreenSize(getScreenSize());
   useEffect(() => {
     handleSetWidth();
