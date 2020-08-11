@@ -10,11 +10,16 @@ function debounce(callback, waitTime) {
   };
 }
 
-const getWidth = () => window.innerWidth;
+const getScreenSize = () => {
+  return {
+    width: window.innerWidth,
+    height: window.innerHeight,
+  };
+};
 
 export default function useResizeWidth() {
-  const [width, setWidth] = useState(null);
-  const handleSetWidth = () => setWidth(getWidth());
+  const [screenSize, setScreenSize] = useState(null);
+  const handleSetWidth = () => setScreenSize(getScreenSize());
   useEffect(() => {
     handleSetWidth();
     const handler = debounce(handleSetWidth, 200);
@@ -22,5 +27,5 @@ export default function useResizeWidth() {
     window.addEventListener('resize', handler);
     return () => window.removeEventListener('resize', handler);
   }, []);
-  return width;
+  return screenSize;
 }
