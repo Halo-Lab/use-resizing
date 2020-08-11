@@ -1,25 +1,27 @@
 import { useEffect, useState } from 'react';
-
-import getScreenSize from './utils/getScreenSize';
 import debounce from './utils/debounce';
 
-const currentScreenSize = (settings = { debounceTime: 200 }) => {
-  const [screenSize, setScreenSize] = useState(getScreenSize());
-  const handleResize = () => setScreenSize(getScreenSize());
-  const handleResizeDebounced = debounce(handleResize, settings.debounceTime);
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResizeDebounced);
-
-    return () => {
-      window.removeEventListener('resize', handleResizeDebounced);
-    };
-  }, []);
-
-  return {
-    width: screenSize.width,
-    height: screenSize.height,
+function debounce(callback, waitTime) {
+  let timeNow = Date.now();
+  return () => {
+    if (timeNow - Date.now() + waitTime < 0) {
+      callback();
+      timeNow = Date.now();
+    }
   };
-};
+}
 
-export default currentScreenSize;
+const getWidth = () => window.innerWidth;
+
+export default function useResizeWidth() {
+  const [width, setWidth] = useState(null);
+  const handleSetWidth = () => setWidth(getWidth());
+  useEffect(() => {
+    handleSetWidth();
+    const handler = debounce(handleSetWidth, 200);
+
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler);
+  }, []);
+  return width;
+}
