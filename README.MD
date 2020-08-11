@@ -12,7 +12,7 @@ In your React component:
 <br/>
 
 ```
-import useResize from "useResize"
+import useResize from "use-resizing"
 
 function SizeInfo() {
   const screenSize = useResize()
