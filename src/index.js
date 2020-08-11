@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import debounce from './utils/debounce';
 
 function debounce(callback, waitTime) {
   let timeNow = Date.now();
@@ -20,8 +19,8 @@ export default function useResizeWidth() {
     handleSetWidth();
     const handler = debounce(handleSetWidth, 200);
 
-    window.addEventListener("resize", handler);
-    return () => window.removeEventListener("resize", handler);
+    window.addEventListener('resize', handler);
+    return () => window.removeEventListener('resize', handler);
   }, []);
   return width;
 }
